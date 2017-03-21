@@ -1,6 +1,14 @@
 <?php 
-    $miArray = array(rand(0, 10), rand(0, 10), rand(0, 10), rand(0, 10), rand(0, 10));
-
+    //Se define a inicializa el array
+    //$miArray = array(rand(0, 10), rand(0, 10), rand(0, 10), rand(0, 10), rand(0, 10));
+    
+    //Se define el array y se le cargan valores indexandolo
+    $miArray = array();
+    for($i = 0; $i < 6; $i++)
+    {
+        $miArray[$i] = rand(0, 10);
+    }
+    
     // var_dump($miArray);
     $acumulador = 0;
 
