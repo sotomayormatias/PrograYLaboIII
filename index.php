@@ -4,12 +4,18 @@
     
     //Se define el array y se le cargan valores indexandolo
     $miArray = array();
-    for($i = 0; $i < 6; $i++)
+    // for($i = 0; $i < 5; $i++)
+    // {
+    //     $miArray[$i] = rand(0, 10);
+    // }
+
+    // Se carga el array con el meodo push
+    for($i = 0; $i < 5; $i++)
     {
-        $miArray[$i] = rand(0, 10);
+        array_push($miArray, rand(0, 10));
     }
     
-    // var_dump($miArray);
+    //var_dump($miArray);
     $acumulador = 0;
 
     foreach ($miArray as $value) {
