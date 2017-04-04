@@ -1,0 +1,53 @@
+<?php
+include "empleado.php";
+class Fabrica{
+    private $_empleados;
+    private $_razonSocial;
+
+    public function __construct($razonSocial){
+        $this->_empleados = array();
+        $this->_razonSocial = $razonSocial;
+    }
+
+    public function agregarEmpleado($empleado){
+        array_push($this->_empleados, $empleado);
+        // $this->eliminarEmpleadosRepetidos();
+    }
+
+    public function eliminarEmpleado($empleado){
+        foreach ($this->_empleados as $value) {
+            if($empleado->getDni() == $value->getDni()){
+                unset($value);
+            }
+        }
+    }
+
+    private function eliminarEmpleadosRepetidos(){
+        array_unique($this->_empleados);
+    }
+
+    public function ToString(){
+        $resultado = $this->_razonSocial . " . ";
+        foreach ($this->_empleados as $empleado) {
+            $resultado .= $empleado->ToString() . "<br>";
+        }
+        return $resultado;
+    }
+
+    public function calcularSueldos(){
+        $importe = 0;
+        foreach ($this->_empleados as $empleado) {
+            $importe += $empleado->getSueldo();
+        }
+        return $importe;
+    }
+
+    public function guardarEnTxt(){
+        $file = fopen($this->_razonSocial . ".txt", "w");
+        foreach ($this->_empleados as $empleado) {
+            fwrite($file, $empleado->ToString() . "\r\n");
+        }
+        fclose($file);
+    }
+}
+?>
