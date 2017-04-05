@@ -7,6 +7,19 @@ class Fabrica{
     public function __construct($razonSocial){
         $this->_empleados = array();
         $this->_razonSocial = $razonSocial;
+        $this->inicializarDesdeArchivo($razonSocial);
+    }
+
+    private function inicializarDesdeArchivo($razonSocial){
+        $file = fopen($razonSocial . ".txt", "r");
+        while (!feof($file)) {
+            $registro = trim(fgets($file));
+            if($registro != ""){
+                $array = explode(" - ", $registro);
+                $empleado = new Empleado($array[0], $array[1], $array[2], $array[3], $array[4], $array[5]);
+                $this->agregarEmpleado($empleado);
+            }
+        }
     }
 
     public function agregarEmpleado($empleado){
@@ -27,7 +40,7 @@ class Fabrica{
     }
 
     public function ToString(){
-        $resultado = $this->_razonSocial . " . ";
+        $resultado = "";
         foreach ($this->_empleados as $empleado) {
             $resultado .= $empleado->ToString() . "<br>";
         }
