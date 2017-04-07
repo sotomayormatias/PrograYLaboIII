@@ -9,14 +9,24 @@ Al presionar el boton leer, si el archivo existe, se mostrara el contenido; de n
 //var_dump($_POST);
 
 if(isset($_POST['leer'])){
-    $file = fopen("archivo.txt", "r");
-    $valor = fread($file, filesize("archivo.txt"));
-    echo $valor;
-    fclose($file);
+    $archivo = $_POST['archivo'];
+    if(file_exists($archivo . ".txt")){
+        $file = fopen("archivo.txt", "r");
+        $valor = fread($file, filesize("archivo.txt"));
+        echo $valor;
+        fclose($file);
+    }
+    else{
+        echo "El archivo no existe";
+    }
 }
 elseif(isset($_POST['guardar'])){
     $nombre = $_POST['nombre'];
+    $archivo = $_POST['archivo'];
 
+    if(file_exists($archivo . ".txt")){
+        rename($archivo . ".txt", "backup/" . $archivo . date("Ymd") . ".txt");
+    }
     $file = fopen("archivo.txt", "w");
     fwrite($file, $nombre . "\r\n");
     fclose($file);
