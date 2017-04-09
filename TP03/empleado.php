@@ -4,11 +4,13 @@ include "persona.php";
 class Empleado extends Persona{
     private $_legajo;
     private $_sueldo;
+    private $_pathFoto;
 
-    public function __construct($nombre, $apellido, $dni, $genero, $legajo, $sueldo){
+    public function __construct($nombre, $apellido, $dni, $genero, $legajo, $sueldo, $pathFoto){
         parent::__construct($nombre, $apellido, $dni, $genero);
         $this->_legajo = $legajo;
         $this->_sueldo = $sueldo;
+        $this->_pathFoto = $pathFoto;
     }
 
     public function getLegajo(){
@@ -16,6 +18,12 @@ class Empleado extends Persona{
     }
     public function getSueldo(){
         return $this->_sueldo;
+    }
+    public function getPathFoto(){
+        return $this->_pathFoto;
+    }
+    public function setPathFoto($pathFoto){
+        $this->_pathFoto = $pathFoto;
     }
 
     public function ToString(){
