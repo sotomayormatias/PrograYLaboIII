@@ -8,7 +8,7 @@
     <title>Formulario</title>
 </head>
 <body>
-    <form action="administracion.php" method="POST">
+    <form action="administracion.php" method="POST" enctype="multipart/form-data">
         Nombre: <br>
         <input type="text" name="nombre" placeholder="Nombre"><br>
         Apellido: <br>
@@ -23,7 +23,7 @@
         Sueldo: <br>
         <input type="number" name="sueldo" placeholder="Sueldo"><br>
         Foto: <br>
-        <input type="file" name"foto"><br>
+        <input type="file" name="foto" accept="image/jpeg,image/gif,image/png,image/jpg,image/bmp"><br>
         <br>
 
         <input type="submit" value="Guardar">

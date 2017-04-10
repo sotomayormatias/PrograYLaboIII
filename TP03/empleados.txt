@@ -1,4 +1,2 @@
-Manuel - Belgrano - 12319 - Masculino - 94586 - 29342
-Diego - Maradona - 35639740 - Masculino - 524234 - 35231
-Matias - Sotomayor - 34374176 - Masculino - 123566 - 123364574
-Juancho - Talarga - 2352349234 - Masculino - 2359234 - 9232839
+asd - asdas - 5645634 - Masculino - 23423 - 234234 - fotos/5645634-asdas.jpg
+marcelo - agachateyconocelo - 23423 - Femenino - 234234 - 234234 - fotos/23423-agachateyconocelo.jpg

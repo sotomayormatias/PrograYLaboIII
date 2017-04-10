@@ -11,13 +11,15 @@ class Fabrica{
     }
 
     private function inicializarDesdeArchivo($razonSocial){
-        $file = fopen($razonSocial . ".txt", "r");
-        while (!feof($file)) {
-            $registro = trim(fgets($file));
-            if($registro != ""){
-                $array = explode(" - ", $registro);
-                $empleado = new Empleado($array[0], $array[1], $array[2], $array[3], $array[4], $array[5]);
-                $this->agregarEmpleado($empleado);
+        if(file_exists($razonSocial . ".txt")){
+            $file = fopen($razonSocial . ".txt", "r");
+            while (!feof($file)) {
+                $registro = trim(fgets($file));
+                if($registro != ""){
+                    $array = explode(" - ", $registro);
+                    $empleado = new Empleado($array[0], $array[1], $array[2], $array[3], $array[4], $array[5]);
+                    $this->agregarEmpleado($empleado);
+                }
             }
         }
     }
@@ -28,6 +30,7 @@ class Fabrica{
     }
 
     public function eliminarEmpleado($empleado){
+        var_dump($empleado);
         foreach ($this->_empleados as $value) {
             if($empleado->getDni() == $value->getDni()){
                 unset($value);

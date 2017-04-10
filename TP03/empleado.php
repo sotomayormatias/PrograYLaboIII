@@ -6,11 +6,10 @@ class Empleado extends Persona{
     private $_sueldo;
     private $_pathFoto;
 
-    public function __construct($nombre, $apellido, $dni, $genero, $legajo, $sueldo, $pathFoto){
+    public function __construct($nombre, $apellido, $dni, $genero, $legajo, $sueldo){
         parent::__construct($nombre, $apellido, $dni, $genero);
         $this->_legajo = $legajo;
         $this->_sueldo = $sueldo;
-        $this->_pathFoto = $pathFoto;
     }
 
     public function getLegajo(){
@@ -27,7 +26,7 @@ class Empleado extends Persona{
     }
 
     public function ToString(){
-        return parent::ToString() . " - " . $this->_legajo . " - " . $this->_sueldo;
+        return parent::ToString() . " - " . $this->_legajo . " - " . $this->_sueldo . " - " . $this->getPathFoto();
     }
 
     public function hablar($idioma){

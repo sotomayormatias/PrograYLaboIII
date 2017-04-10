@@ -9,13 +9,13 @@ $empleado3 = new Empleado("Carlos", "Tevez", "32654960", "Masculino", 987654, 45
 
 $fabrica = new Fabrica("fabrica SA");
 
-// $fabrica->agregarEmpleado($empleado1);
-// $fabrica->agregarEmpleado($empleado2);
-// $fabrica->agregarEmpleado($empleado3);
+$fabrica->agregarEmpleado($empleado1);
+$fabrica->agregarEmpleado($empleado2);
+$fabrica->agregarEmpleado($empleado3);
 
 echo $fabrica->ToString();
 
-// $fabrica->eliminarEmpleado($empleado1);
+$fabrica->eliminarEmpleado($empleado1);
 
 $fabrica->guardarEnTxt();
 
