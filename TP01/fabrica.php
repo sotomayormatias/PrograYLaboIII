@@ -31,9 +31,9 @@ class Fabrica{
 
     public function eliminarEmpleado($empleado){
         var_dump($empleado);
-        foreach ($this->_empleados as $value) {
+        foreach ($this->_empleados as $key => $value) {
             if($empleado->getDni() == $value->getDni()){
-                unset($value);
+                unset($this->_empleados[$key]);
             }
         }
     }

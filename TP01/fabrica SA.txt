@@ -1,6 +1,2 @@
-Matias - Sotomayor - 34374176 - Masculino - 123456 - 45616
-Diego - Maradona - 12354955 - Masculino - 321654 - 45616
-Carlos - Tevez - 32654960 - Masculino - 987654 - 45616
-Matias - Sotomayor - 34374176 - Masculino - 123456 - 45616
 Diego - Maradona - 12354955 - Masculino - 321654 - 45616
 Carlos - Tevez - 32654960 - Masculino - 987654 - 45616
