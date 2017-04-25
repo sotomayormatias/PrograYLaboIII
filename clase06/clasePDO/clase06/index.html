@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <title>Ejemplos de PDO</title>
+
+        <meta charset="UTF-8">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript" src="./js/funciones.js"></script>
+
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="estilo.css">
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="CajaInicio animated bounceInRight">
+                <h1>Ejemplos PDO </h1>
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td width="60%">
+                                <div id="divFrm" style="height:510px;overflow:auto;margin-top:20px">		
+
+                                    <a href="#" class="list-group-item  list-group-item list-group-item-info" onclick="MostrarEjemplo(0)" >
+                                        <h4 class="list-group-item-heading">0-Ejemplo Conexi&oacute;n</h4>
+                                        <p class="list-group-item-text">genera una conexi&oacute;n hacia la base de datos</p>
+                                    </a>
+                                    
+                                    <a href="#" class="list-group-item  list-group-item list-group-item-info" onclick="MostrarEjemplo(1)" >
+                                        <h4 class="list-group-item-heading">1-Ejemplo fetchall</h4>
+                                        <p class="list-group-item-text">consulta SELECT</p>
+                                        <p class="list-group-item-text">Tomado de datos como un array asociativo/indexado.</p>
+                                    </a>
+
+                                    <a href="#" class="list-group-item  list-group-item list-group-item-info" onclick="MostrarEjemplo(2)" >
+                                        <h4 class="list-group-item-heading">2-Ejemplo fetch(PDO::FETCH_ASSOC)</h4>
+                                        <p class="list-group-item-text">consulta SELECT</p>
+                                        <p class="list-group-item-text">Tomado de datos como un array asociativo.</p>
+                                    </a>
+
+                                    <a href="#" class="list-group-item  list-group-item list-group-item-info" onclick="MostrarEjemplo(3)" >
+                                        <h4 class="list-group-item-heading">3-Ejemplo fetch(PDO::FETCH_NUM)</h4>
+                                        <p class="list-group-item-text">consulta SELECT</p>
+                                        <p class="list-group-item-text">Tomado de datos como un array indexado.</p>
+                                    </a>
+
+                                    <a href="#" class="list-group-item  list-group-item list-group-item-info" onclick="MostrarEjemplo(4)" >
+                                        <h4 class="list-group-item-heading">4-Ejemplo fetch(PDO::FETCH_BOTH)</h4>
+                                        <p class="list-group-item-text">consulta SELECT</p>
+                                        <p class="list-group-item-text">Tomado de datos como un array asociativo e indexado.</p>
+                                    </a>
+
+                                    <a href="#" class="list-group-item  list-group-item list-group-item-info" onclick="MostrarEjemplo(5)" >
+                                        <h4 class="list-group-item-heading">5-Ejemplo fetch(PDO::FETCH_LAZY)</h4>
+                                        <p class="list-group-item-text">consulta SELECT</p>
+                                        <p class="list-group-item-text">Tomado de datos como un array de objetos gen&eacute;ricos y los atributos 
+                                            con los nombres de las columnas.</p>
+                                    </a>
+                                    <a href="#" class="list-group-item  list-group-item list-group-item-info" onclick="MostrarEjemplo(6)" >
+                                        <h4 class="list-group-item-heading">6-Ejemplo fetchObject()</h4>
+                                        <p class="list-group-item-text">consulta SELECT</p>
+                                        <p class="list-group-item-text">Tomado de datos como un array de Objetos accediendo a sus m&eacute;todos.</p>
+                                    </a>
+
+                                    <a href="#" class="list-group-item  list-group-item list-group-item-info" onclick="MostrarEjemplo(7)" >
+                                        <h4 class="list-group-item-heading">7-Ejemplo setFetchMode(PDO::FETCH_INTO, new cd);</h4>
+                                        <p class="list-group-item-text">consulta SELECT</p>
+                                        <p class="list-group-item-text">Tomado de datos y guardando los elementos en la clase estipulada, 
+                                            habilitando el acceso a sus m&eacute;todos.</p>
+                                    </a>
+
+                                    <a href="#" class="list-group-item  list-group-item list-group-item-info" onclick="MostrarHtml(8)" >
+                                        <h2 class="list-group-item-heading">8-Ejemplo clase b&aacute;sica para generar conexi&oacute;n</h2>
+                                        <p class="list-group-item-text">Conectarnos de manera prolija</p>
+                                        <p class="list-group-item-text">Creamos una clase que nos permita reutilizar c&oacute;digo.</p>
+                                    </a>
+
+                                    <a href="#" class="list-group-item  list-group-item list-group-item-info" onclick="MostrarHtml(9)" >
+                                        <h2 class="list-group-item-heading">9-BindParam</h2>
+                                        <p class="list-group-item-text">Definici&oacute;n de par&aacute;metros</p>
+                                        <p class="list-group-item-text">Cada par&aacute;metro tiene un orden y signo de "?" que lo reemplaza</p>
+                                    </a>
+
+                                    <a href="#" class="list-group-item  list-group-item list-group-item-info" onclick="MostrarHtml(10)" >
+                                        <h2 class="list-group-item-heading">10-BindValue</h2>
+                                        <p class="list-group-item-text">Definici&oacute;n de par&aacute;metros 'nombrados'</p>
+                                        <p class="list-group-item-text">Cada par&aacute;metro tiene un nombre que lo reemplaza en la sentencia </p>
+                                    </a>
+                                    
+                                    <a href="#" class="list-group-item  list-group-item list-group-item-info" onclick="MostrarHtml(11)" >
+                                        <h2 class="list-group-item-heading">11-Ejecuci&oacute;n de sentencias con par&aacute;metros con nombre y pasado por array</h2>
+                                        <p class="list-group-item-text">definici&oacute;n de par&aacute;metros </p>
+                                        <p class="list-group-item-text">cada par&aacute;metro tiene un nombre que lo reemplaza en la sentencia </p>
+                                    </a>
+                                    
+                                    <a href="#" class="list-group-item  list-group-item list-group-item-info" onclick="MostrarHtml(12)" >
+                                        <h2 class="list-group-item-heading">12-Insertar un CD en la base de datos</h2>
+                                        <p class="list-group-item-text">definici&oacute;n de par&aacute;metros </p>
+                                        <p class="list-group-item-text">cada par&aacute;metro tiene un nombre que lo reemplaza en la sentencia </p>
+                                    </a>
+  
+                                    <a href="#" class="list-group-item  list-group-item list-group-item-info" onclick="MostrarHtml(13)" >
+                                        <h2 class="list-group-item-heading">13-Modificar un CD en la base de datos</h2>
+                                        <p class="list-group-item-text">Utilizaci&oacute;n de atributos </p>
+                                        <p class="list-group-item-text">Cada par&aacute;metro es un atributo de la clase </p>
+                                    </a>
+                                    
+                                    <a href="#" class="list-group-item  list-group-item list-group-item-info" onclick="MostrarHtml(14)" >
+                                        <h2 class="list-group-item-heading">14-Borrar el CD en la base de datos</h2>
+                                        <p class="list-group-item-text">Utilizaci&oacute;n de atributos </p>
+                                        <p class="list-group-item-text">Borramos el registo seg&uacute;n id</p>
+                                    </a>
+                                    
+                                </div>
+                            </td>
+                            <td width="40%">
+                                <div id="divEjemplo" style="height:510px;overflow:auto;border-style:solid;text-align:left">
+
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </body>
+</html>
