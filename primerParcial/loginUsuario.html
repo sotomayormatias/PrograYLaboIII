@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Login</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <div class="container" style="background-color:#ddeeff;">
+            <div class="page-header">
+                <h1 class="text-center">Login</h1>
+            </div>
+            <form action="verificarUsuario.php" method="POST">
+                <div class="form-group">
+                    <input type="text" name="correo" id="correo" placeholder="Correo" class="form-control" />
+                </div>
+                <div class="form-group" >
+                    <input type="password" name="clave" id="clave" placeholder="Clave" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-block" />
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
