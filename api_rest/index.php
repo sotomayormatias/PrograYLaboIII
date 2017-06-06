@@ -39,9 +39,15 @@ $app->post('/cd[/]', function (Request $request, Response $response) {
     $titulo = filter_var($parsedBody['titulo'], FILTER_SANITIZE_STRING);
     $cantante = filter_var($parsedBody['cantante'], FILTER_SANITIZE_STRING);
     $anio = filter_var($parsedBody['anio'], FILTER_SANITIZE_STRING);
+    $archivos = $request->getUploadedFiles();
+    $foto = $archivos['foto'];
 
-    $cd = new cd(null, $titulo, $cantante, $anio);
-    $cd->insertarElCd();
+    //Esto hay que hacerlo en la llamada al metodo del cd, pasandole el archivo por parametro
+    //No deberia haber logica en los metodos del slim
+    $foto->moveTo("img/" . $titulo . ".jpg");
+
+    // $cd = new cd(null, $titulo, $cantante, $anio);
+    // $cd->insertarElCd();
 
     return $response;
 });
