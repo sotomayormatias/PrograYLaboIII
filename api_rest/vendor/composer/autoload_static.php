@@ -7,10 +7,15 @@ namespace Composer\Autoload;
 class ComposerStaticInit35efeed169510bae3251644acf5dd86c
 {
     public static $files = array (
+        'a16312f9300fed4a097923eacb0ba814' => __DIR__ . '/..' . '/igorw/get-in/src/get_in.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'Z' => 
+        array (
+            'Zend\\Diactoros\\' => 15,
+        ),
         'S' => 
         array (
             'Slim\\' => 5,
@@ -20,8 +25,14 @@ class ComposerStaticInit35efeed169510bae3251644acf5dd86c
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
         ),
+        'M' => 
+        array (
+            'Middlewares\\' => 12,
+        ),
         'I' => 
         array (
+            'Ivory\\HttpAdapter\\' => 18,
+            'Interop\\Http\\ServerMiddleware\\' => 30,
             'Interop\\Container\\' => 18,
         ),
         'F' => 
@@ -31,6 +42,10 @@ class ComposerStaticInit35efeed169510bae3251644acf5dd86c
     );
 
     public static $prefixDirsPsr4 = array (
+        'Zend\\Diactoros\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-diactoros/src',
+        ),
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
@@ -42,6 +57,18 @@ class ComposerStaticInit35efeed169510bae3251644acf5dd86c
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Middlewares\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/middlewares/geolocation/src',
+        ),
+        'Ivory\\HttpAdapter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egeloen/http-adapter/src',
+        ),
+        'Interop\\Http\\ServerMiddleware\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/http-interop/http-middleware/src',
         ),
         'Interop\\Container\\' => 
         array (
@@ -59,6 +86,13 @@ class ComposerStaticInit35efeed169510bae3251644acf5dd86c
             'Pimple' => 
             array (
                 0 => __DIR__ . '/..' . '/pimple/pimple/src',
+            ),
+        ),
+        'G' => 
+        array (
+            'Geocoder' => 
+            array (
+                0 => __DIR__ . '/..' . '/willdurand/geocoder/src',
             ),
         ),
     );

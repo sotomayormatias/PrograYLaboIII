@@ -15,6 +15,8 @@ $app->get('/hello/{name}', function (Request $request, Response $response) {
 });
 
 $app->get('/', function (Request $request, Response $response) {
+    $geo = New Geolocation();
+    $res = $geo->proccess();
     $response->getBody()->write("Hello Slim Framework GET");
 
     return $response;

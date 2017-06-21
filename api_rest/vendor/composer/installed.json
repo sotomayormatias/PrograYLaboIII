@@ -300,5 +300,355 @@
             "micro",
             "router"
         ]
+    },
+    {
+        "name": "igorw/get-in",
+        "version": "v1.0.3",
+        "version_normalized": "1.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/igorw/get-in.git",
+            "reference": "170ded831f49abc6a6061f655aba9bdbcf7b8111"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/igorw/get-in/zipball/170ded831f49abc6a6061f655aba9bdbcf7b8111",
+            "reference": "170ded831f49abc6a6061f655aba9bdbcf7b8111",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4"
+        },
+        "time": "2014-12-15T23:03:51+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/get_in.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Igor Wiedler",
+                "email": "igor@wiedler.ch"
+            }
+        ],
+        "description": "Functions for for hash map (assoc array) traversal.",
+        "keywords": [
+            "assoc-array",
+            "hash-map"
+        ]
+    },
+    {
+        "name": "zendframework/zend-diactoros",
+        "version": "1.4.0",
+        "version_normalized": "1.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/zend-diactoros.git",
+            "reference": "b03f285a333f51e58c95cce54109a4a9ed691436"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/b03f285a333f51e58c95cce54109a4a9ed691436",
+            "reference": "b03f285a333f51e58c95cce54109a4a9ed691436",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.4 || ^7.0",
+            "psr/http-message": "~1.0"
+        },
+        "provide": {
+            "psr/http-message-implementation": "1.0"
+        },
+        "require-dev": {
+            "ext-dom": "*",
+            "ext-libxml": "*",
+            "phpunit/phpunit": "^4.6 || ^5.5",
+            "zendframework/zend-coding-standard": "~1.0.0"
+        },
+        "time": "2017-04-06T16:18:34+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4-dev",
+                "dev-develop": "1.5-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Zend\\Diactoros\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-2-Clause"
+        ],
+        "description": "PSR HTTP Message implementations",
+        "homepage": "https://github.com/zendframework/zend-diactoros",
+        "keywords": [
+            "http",
+            "psr",
+            "psr-7"
+        ]
+    },
+    {
+        "name": "egeloen/http-adapter",
+        "version": "0.8.0",
+        "version_normalized": "0.8.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/egeloen/ivory-http-adapter.git",
+            "reference": "9641f11487ec26b24c6bbcee4f267cf62f60b855"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/egeloen/ivory-http-adapter/zipball/9641f11487ec26b24c6bbcee4f267cf62f60b855",
+            "reference": "9641f11487ec26b24c6bbcee4f267cf62f60b855",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.8",
+            "zendframework/zend-diactoros": "^1.1"
+        },
+        "require-dev": {
+            "cakephp/cakephp": "^3.0.3",
+            "ext-curl": "*",
+            "guzzle/guzzle": "^3.9.4@dev",
+            "guzzlehttp/guzzle": "^4.1.4|^5.0|^6.0",
+            "kriswallsmith/buzz": "^0.13",
+            "nategood/httpful": "^0.2.17",
+            "phpunit/phpunit": "^4.0",
+            "phpunit/phpunit-mock-objects": "dev-matcher-verify as 2.3.x-dev",
+            "psr/log": "^1.0",
+            "react/dns": "^0.4.1",
+            "react/http-client": "^0.4",
+            "satooshi/php-coveralls": "^0.6",
+            "symfony/event-dispatcher": "^2.0",
+            "zendframework/zend-http": "^2.3.4",
+            "zendframework/zendframework1": ">=1.12.9,<=1.12.14|^1.12.16"
+        },
+        "suggest": {
+            "ext-curl": "Allows you to use the cURL adapter",
+            "ext-http": "Allows you to use the PECL adapter",
+            "guzzle/guzzle": "Allows you to use the Guzzle 3 adapter",
+            "guzzlehttp/guzzle": "Allows you to use the Guzzle 4 adapter",
+            "kriswallsmith/buzz": "Allows you to use the Buzz adapter",
+            "nategood/httpful": "Allows you to use the httpful adapter",
+            "psr/log": "Allows you to use the logger event subscriber",
+            "symfony/event-dispatcher": "Allows you to use the event lifecycle",
+            "symfony/stopwatch": "Allows you to use the stopwatch http adapter and event subscriber",
+            "zendframework/zend-http": "Allows you to use the Zend 2 adapter",
+            "zendframework/zendframework1": "Allows you to use the Zend 1 adapter"
+        },
+        "time": "2015-08-12T09:35:40+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.8-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Ivory\\HttpAdapter\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Eric GELOEN",
+                "email": "geloen.eric@gmail.com"
+            }
+        ],
+        "description": "Issue HTTP request for PHP 5.3+.",
+        "keywords": [
+            "http",
+            "http-adapter",
+            "http-client",
+            "psr-7"
+        ],
+        "abandoned": "php-http/httplug"
+    },
+    {
+        "name": "willdurand/geocoder",
+        "version": "v3.3.2",
+        "version_normalized": "3.3.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/geocoder-php/php-common.git",
+            "reference": "ccc178e2984c0af24881faa0ffe515f20e5e8c23"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/geocoder-php/php-common/zipball/ccc178e2984c0af24881faa0ffe515f20e5e8c23",
+            "reference": "ccc178e2984c0af24881faa0ffe515f20e5e8c23",
+            "shasum": ""
+        },
+        "require": {
+            "egeloen/http-adapter": "~0.8",
+            "igorw/get-in": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "geoip2/geoip2": "~2.0",
+            "symfony/stopwatch": "~2.5"
+        },
+        "suggest": {
+            "ext-geoip": "Enabling the geoip extension allows you to use the MaxMindProvider.",
+            "geoip/geoip": "If you are going to use the MaxMindBinaryProvider (conflict with geoip extension).",
+            "geoip2/geoip2": "If you are going to use the GeoIP2DatabaseProvider.",
+            "symfony/stopwatch": "If you want to use the TimedGeocoder"
+        },
+        "time": "2015-12-06T20:17:20+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Geocoder": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "William Durand",
+                "email": "william.durand1@gmail.com"
+            }
+        ],
+        "description": "The almost missing Geocoder PHP 5.4 library.",
+        "homepage": "http://geocoder-php.org",
+        "keywords": [
+            "abstraction",
+            "geocoder",
+            "geocoding",
+            "geoip"
+        ]
+    },
+    {
+        "name": "http-interop/http-middleware",
+        "version": "0.4.1",
+        "version_normalized": "0.4.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/http-interop/http-middleware.git",
+            "reference": "9a801fe60e70d5d608b61d56b2dcde29516c81b9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/http-interop/http-middleware/zipball/9a801fe60e70d5d608b61d56b2dcde29516c81b9",
+            "reference": "9a801fe60e70d5d608b61d56b2dcde29516c81b9",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "psr/http-message": "^1.0"
+        },
+        "time": "2017-01-14T15:23:42+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Interop\\Http\\ServerMiddleware\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for HTTP server-side middleware",
+        "keywords": [
+            "factory",
+            "http",
+            "middleware",
+            "psr",
+            "psr-17",
+            "psr-7",
+            "request",
+            "response"
+        ]
+    },
+    {
+        "name": "middlewares/geolocation",
+        "version": "v0.3.0",
+        "version_normalized": "0.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/middlewares/geolocation.git",
+            "reference": "6dc17781030c7ed92a217b16ae7b0188722146cd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/middlewares/geolocation/zipball/6dc17781030c7ed92a217b16ae7b0188722146cd",
+            "reference": "6dc17781030c7ed92a217b16ae7b0188722146cd",
+            "shasum": ""
+        },
+        "require": {
+            "http-interop/http-middleware": "^0.4",
+            "php": "^5.6 || ^7.0",
+            "willdurand/geocoder": "^3.3"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "^2.0",
+            "middlewares/utils": "~0.8",
+            "phpunit/phpunit": "^5.5",
+            "squizlabs/php_codesniffer": "^2.7",
+            "zendframework/zend-diactoros": "^1.3"
+        },
+        "time": "2016-12-26T09:58:46+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Middlewares\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Middleware to geolocate the client using the ip address",
+        "homepage": "https://github.com/middlewares/geolocation",
+        "keywords": [
+            "IP",
+            "geocode",
+            "geolocation",
+            "http",
+            "middleware",
+            "psr-15",
+            "psr-7",
+            "server"
+        ]
     }
 ]
