@@ -29,12 +29,13 @@ class cdApi extends cd implements IApiUsable {
 		$micd->titulo=$titulo;
 		$micd->cantante=$cantante;
 		$micd->año=$año;
-		$micd->InsertarElCdParametros();
+		// $micd->InsertarElCdParametros();
 
 		$archivos = $request->getUploadedFiles();
-		$foto = $archivos['foto'];
+		cd::GuardarCd($micd, $archivos);
+		// $foto = $archivos['foto'];
 
-		$foto->moveTo("fotos/" . $titulo . ".jpg");
+		// $foto->moveTo("fotos/" . $titulo . ".jpg");
 
 		return $response;
 
@@ -65,7 +66,7 @@ class cdApi extends cd implements IApiUsable {
 		$objDelaRespuesta= new stdclass();
 		$objDelaRespuesta->cantidad=$cantidadDeBorrados;
 		if($cantidadDeBorrados>0){
-			$objDelaRespuesta->resultado="algo borro!!!";
+			$objDelaRespuesta->resultado="Borrado exitoso!!!";
 		}
 		else{
 			$objDelaRespuesta->resultado="no Borro nada!!!";
@@ -75,9 +76,8 @@ class cdApi extends cd implements IApiUsable {
 	}
 
 	public function ModificarUno($request, $response, $args) {
-		//$response->getBody()->write("<h1>Modificar  uno</h1>");
 		$ArrayDeParametros = $request->getParsedBody();
-		//var_dump($ArrayDeParametros);    	
+
 		$micd = new cd();
 		$micd->id=$ArrayDeParametros['id'];
 		$micd->titulo=$ArrayDeParametros['titulo'];
@@ -86,7 +86,6 @@ class cdApi extends cd implements IApiUsable {
 
 		$resultado =$micd->ModificarCdParametros();
 		$objDelaRespuesta= new stdclass();
-		//var_dump($resultado);
 		$objDelaRespuesta->resultado=$resultado;
 		return $response->withJson($objDelaRespuesta, 200);		
 	}

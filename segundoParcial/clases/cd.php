@@ -31,6 +31,13 @@ class cd {
 		return $cdBuscado;
 	}
 
+
+	public static function GuardarCD($cd, $archivos){
+		$id = $cd->InsertarElCdParametros();
+		$foto = $archivos['foto'];
+		$foto->moveTo("fotos/" . $id . ".jpg");
+	}
+
 	public function InsertarElCdParametros() {
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 		$consulta =$objetoAccesoDato->RetornarConsulta("INSERT INTO cds(titel,interpret,jahr)
@@ -43,6 +50,10 @@ class cd {
 	}
 
 	public function BorrarCd() {
+		$path = "fotos/".$this->id.".jpg";
+		if(file_exists($path)){
+			unlink($path);
+		}
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 		$consulta =$objetoAccesoDato->RetornarConsulta("DELETE
 														FROM cds 				
