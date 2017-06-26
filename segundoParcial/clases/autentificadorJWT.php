@@ -15,7 +15,7 @@
 
             return JWT::encode($payload, self::$claveSecreta);
         }
-
+        
         public static function verificarToken($token){
             $decodificado = JWT::decode($token, self::$claveSecreta, self::$tipoEncriptacion);
         }

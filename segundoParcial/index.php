@@ -5,6 +5,8 @@ use \Psr\Http\Message\ResponseInterface as Response;
 require '/vendor/autoload.php';
 require '/clases/AccesoDatos.php';
 require '/clases/cdApi.php';
+require '/clases/medicamentoApi.php';
+require '/clases/ventaApi.php';
 require '/clases/MWParaAutenticar.php';
 
 $config['displayErrorDetails'] = true;
@@ -30,14 +32,51 @@ $app = new \Slim\App(["settings" => $config]);
 /*LLAMADA A METODOS DE INSTANCIA DE UNA CLASE*/
   
 
-$app->group('/cd', function () {
-  $this->get('[/]', \cdApi::class . ':traerTodos');
-  $this->get('/{id}', \cdApi::class . ':traerUno');
-  $this->post('[/]', \cdApi::class . ':CargarUno');
-  $this->delete('/{id}', \cdApi::class . ':BorrarUno');
-  $this->put('[/]', \cdApi::class . ':ModificarUno');
+// $app->group('/cd', function () {
+//   $this->get('[/]', \cdApi::class . ':traerTodos');
+//   $this->get('/{id}', \cdApi::class . ':traerUno');
+//   $this->post('[/]', \cdApi::class . ':CargarUno');
+//   $this->delete('/{id}', \cdApi::class . ':BorrarUno');
+//   $this->put('[/]', \cdApi::class . ':ModificarUno');
   
-})->add(\MWParaAutenticar::class . ':VerificarUsuario');
+// })->add(\MWParaAutenticar::class . ':VerificarUsuario');
+
+$app->group('/medicamento', function () {
+  $this->get('[/]', \medicamentoApi::class . ':traerTodos');
+  $this->get('/{id}', \medicamentoApi::class . ':traerUno');
+  $this->post('[/]', \medicamentoApi::class . ':CargarUno');
+  $this->delete('/{id}', \medicamentoApi::class . ':BorrarUno');
+  $this->put('[/]', \medicamentoApi::class . ':ModificarUno');
+  
+});//->add(\MWParaAutenticar::class . ':VerificarUsuario');
+
+$app->group('/venta', function () {
+  $this->post('[/]', \ventaApi::class . ':CargarUno');
+  $this->put('[/]', \ventaApi::class . ':ModificarUno');
+  
+});
+
+$app->post('/verificarUsuario[/]', function (Request $request, Response $response) {
+    $ArrayDeParametros = $request->getParsedBody();
+    $nombre = $ArrayDeParametros['nombre'];
+    $apellido = $ArrayDeParametros['apellido'];
+    $edad = $ArrayDeParametros['edad'];
+    $datos = array(
+            'nombre' => $nombre,
+            'apellido' => $apellido,
+            'edad' => $edad
+    );
+    $token = AutentificadorJWT::crearToken($datos);
+    
+    try{
+        autentificadorJWT::verificarToken($token);
+        echo "Usuario Verificado";
+    }
+    catch(Exception $e){
+        echo $e;
+    }
+    return $response;
+});
 
 $app->get('/crearToken[/]', function (Request $request, Response $response) {  
     $datos = array(
