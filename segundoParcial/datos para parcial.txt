@@ -1,0 +1,18 @@
+Usuario login: matisoto_77@hotmail.com
+Password: Larenga123
+Servidor: server115.hostinger.com.ar
+usuario servidor: u497458896
+
+base de datos: u497458896_sp
+usuario mysql: u497458896_sp
+contraseña: 5GFHwaCYdDr0
+
+www.sotomayormatias.esy.es/segundoParcial/cd/
+
+
+GET:
+POST: se manda con multipart-form-data
+PUT: hay que mandarlo con x-www-form-urlencoded
+DELETE: localhost/programacionIII/segundoParcial/cd/12
+
+$this->objetoPDO = new PDO('mysql:host=mysql.hostinger.com.ar;dbname=u497458896_sp;charset=utf8', 'u497458896_sp', '5GFHwaCYdDr0', array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
